@@ -24,11 +24,10 @@ class PostsController < ApplicationController
   end
 
   def update
-<<<<<<< HEAD
     @post = Post.find(params[:id])
-    @post.update(title: params[:title], description: params[:description])
+    # @post.update(title: params[:title], description: params[:description]) #or
+		@post.update(params.require(:post))
     redirect_to post_path(@post)
-=======
->>>>>>> d243a7e7737e050cbaeb003c6a9aaa7f1baec861
+
   end
 end
